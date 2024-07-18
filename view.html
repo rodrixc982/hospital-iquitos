@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Inventario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Ver Inventario</h1>
+    <table id="inventory-table">
+        <thead>
+            <tr>
+                <th>Código Patrimonial</th>
+                <th>Denominación</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Tipo</th>
+                <th>Color</th>
+                <th>Serie</th>
+                <th>Dimensiones</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="inventory-body">
+            <!-- Los elementos se agregarán aquí -->
+        </tbody>
+    </table>
+    <button onclick="exportToExcel()">Exportar a Excel</button>
+    <button onclick="exportToPDF()">Exportar a PDF</button>
+    <script src="view.js"></script>
+</body>
+</html>

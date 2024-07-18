@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="container">
+        <header>
+            <h1>Inventario Ont </h1>
+            <button class="logout-button" onclick="logout()">Cerrar Sesión</button>
+        </header>
+        <form id="inventory-form" class="form-container">
+            <div class="form-group">
+                <label for="codigo">Código Ont:</label>
+                <input type="text" id="codigo" required>
+            </div>
+            <div class="form-group">
+                <label for="denominacion">Cantidad de Cable Utp:</label>
+                <input type="text" id="denominacion" required>
+            </div>
+            <div class="form-group">
+                <label for="marca">Cantidad de Cable Coxial:</label>
+                <input type="text" id="marca" required>
+            </div>
+            <div class="form-group">
+                <label for="modelo">Ponchado?:</label>
+                <input type="text" id="modelo" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo de Router:</label>
+                <input type="text" id="tipo" required>
+            </div>
+            <div class="form-group">
+                <label for="color">Piso:</label>
+                <input type="text" id="color" required>
+            </div>
+            <div class="form-group">
+                <label for="serie">Serie:</label>
+                <input type="text" id="serie" required>
+            </div>
+            <div class="form-group">
+                <label for="dimensiones">Observacion:</label>
+                <input type="text" id="dimensiones" required>
+            </div>
+            <div class="form-group">
+                <label for="imagen">Imagen:</label>
+                <input type="file" id="imagen" accept="image/*">
+            </div>
+            <button type="button" class="add-button" onclick="addItem()">Agregar</button>
+        </form>
+        <button class="view-button" onclick="showInventory()">Ver Inventario</button>
+        <div id="inventory-view" class="inventory-view" style="display:none;">
+            <h2>Inventario</h2>
+            <table id="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Código Ont</th>
+                        <th>Cantidad de Cable Utp</th>
+                        <th>Cantidad de Cable Coxial</th>
+                        <th>Ponchado?</th>
+                        <th>Tipo de Router</th>
+                        <th>Piso</th>
+                        <th>Serie</th>
+                        <th>Observacion</th>
+                        <th>Imagen</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="inventory-body">
+                    <!-- Los elementos se agregarán aquí -->
+                </tbody>
+            </table>
+            <div class="export-buttons">
+                <button onclick="exportToExcel()">Exportar a Excel</button>
+                <button onclick="exportToPDF()">Exportar a PDF</button>
+            </div>
+        </div>
+
+        <!-- Modal para imagen -->
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
